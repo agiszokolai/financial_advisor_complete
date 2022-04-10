@@ -1,0 +1,33 @@
+
+<div class="card-body" data-bs-toggle="modal" [attr.data-bs-target]="'#' + category.name + '-' + category.id" role="button">
+    <div>
+        <button class="btn rounded-pill shadow-none" [ngStyle]="{'background-color': category.color}"
+        >
+            <i class="{{ category.icon }}"></i>
+        </button>
+        <span class="text-capitalize ms-1">
+            {{ category.name }}
+        </span>
+    </div>
+
+    <div class="text-center">
+        <span>
+            {{ record.amount }} Ft
+        </span>
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped text-dark fw-bold"
+                role="progressbar" [ngStyle]="{'background-color': category.color, 'width': setWidth()}"
+                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+            </div>
+
+            <span class="position-absolute translate-middle start-50" [ngStyle]="{'margin-top': '8px'}">{{setWidth()}}</span>
+        </div>
+    </div>
+</div>
+
+<app-wallet-modal
+    (actionEmit)="actionEmit.emit(true)"
+    [record]="record"
+    [category]="category"
+    [setCurrentDate]="currentDate">
+</app-wallet-modal>

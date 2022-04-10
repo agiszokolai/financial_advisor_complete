@@ -1,0 +1,31 @@
+<div id="sidebar" class="position-sticky top-0 vh-100" [style.width.px]="width">
+    <div class="sidebar-header text-center p-2">
+        <p class="fw-bold mt-2">Üdv {{ user.username }} </p>
+    </div>
+
+    <div class="sidebar-body mt-5">
+        <ul class="list-group">
+            <li class="list-group-item border-0" [routerLinkActive]="['active-link']">
+                <a class="btn shadow-none" [routerLinkActive]="['fw-bold']" [routerLink]="'profile'">Profil</a> 
+            </li>
+    
+            <li class="list-group-item border-0" [routerLinkActive]="['active-link']">
+                <a class="btn shadow-none" [routerLinkActive]="['fw-bold']" [routerLink]="'wallet/expenses'">Kiadások</a> 
+            </li>
+
+
+            <li class="list-group-item border-0" [routerLinkActive]="['active-link']">
+                <a class="btn shadow-none" [routerLinkActive]="['fw-bold']" [routerLink]="'wallet/incomes'">Bevételek</a> 
+            </li>
+
+
+            <li class="list-group-item border-0" [routerLinkActive]="['active-link']">
+                <a class="btn shadow-none" [routerLinkActive]="['fw-bold']" [routerLink]="'statement'">Kimutatások</a> 
+            </li>
+        </ul>
+    </div>
+
+    <div class="position-absolute bottom-0 w-100">
+        <a class="btn shadow-none list-group-item border-0" (click)="logout()">Kijelentkezés</a>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+{
+    "REGISTRATION": {
+        "REGISTRATION":"Regisztráció",
+        "FULLNAME": "Teljes név",
+        "USERNAME": "Felhasználónév",
+        "EMAIL_ADDRESS":"E-mail cím",
+        "PASSWORD": "Jelszó",
+        "CONFIRM_PASS": "Jelszó megerősítése",
+        "CONDITIONS": "Feltételek",
+        "CONDITIONS_LIST":"A jelszónak legalább 1 nagy betűt, 1 számot és 5 karaktert tartalmaznia kell!",
+        "GDPR_ACCEPT":"GDPR elfogadása",
+        "HAVE_ACCOUNT":"Van már fiókod?",
+        "LOGIN_HERE":"Lépj be itt!",
+        "ERRORS": {
+            "FULLNAME_REQUIRED_ERROR":"A név megadása kötelező!",
+            "USERNAME_REQUIRED_ERROR":"A felhasználónév megadása kötelező!",
+            "USERNAME_MIN_LENGTH_ERROR":"A felhasználónévnek minimum 5 karakterből kell állnia!",
+            "EMAIL_REQUIRED_ERROR":"Az e-mail cím megadása kötelező!",
+            "EMAIL_FORMAT_ERROR":"Az e-mail cím formátuma nem megfelő!",
+            "PASSWORD_REQUIRED_ERROR":"A jelszó megadása kötelező!",
+            "PASSWORD_MIN_LENGTH_ERROR":"A jelszónak miminum 5 karakterből kell állnia!",
+            "PASSWORD_NUMBER_UPPERCASE_ERROR":"A jelszónak tartalmaznia kell legalább egy számot és egy nagy betűt!",
+            "CONFIRM_PASS_REQUIRED_ERROR":"A jelsző megerősítése kötelező!",
+            "PASSWORDS_NOT_SAME_ERROR":"A jelszavak nem egyeznek!",
+            "GDPR_ACCEPT_REQUIRED_ERROR":"A GDPR elfogadása kötelező!"
+        }
+    },
+    "LOGIN":{
+        "LOGIN": "Bejelentkezés",
+        "USERNAME": "Felhasználónév",
+        "PASSWORD": "Jelszó",
+        "NO_ACCOUNT":"Még nincs fiókod?",
+        "SIGN_UP": "Regisztrálj itt!",
+        "ERRORS": {
+            "USERNAME_OR_PASSWORD_ERROR": "A felhasználónév vagy a jelszó helytelen."
+        }
+    },
+    "ERRORS": {
+        
+    },
+    "REUSABLES": {
+
+    }
+}

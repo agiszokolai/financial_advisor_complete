@@ -1,0 +1,44 @@
+{
+    "REGISTRATION": {
+        "REGISTRATION":"Registration",
+        "FULLNAME": "Fullname",
+        "USERNAME": "Username",
+        "EMAIL_ADDRESS":"E-mail address",
+        "PASSWORD": "Password",
+        "CONFIRM_PASS": "Confirm password",
+        "CONDITIONS": "Conditions",
+        "CONDITIONS_LIST": "The password must contain at least one number, one upper case letter and five characters",
+        "GDPR_ACCEPT":"GDPR acceptions",
+        "HAVE_ACCOUNT":"Do you have an account?",
+        "LOGIN_HERE":"Login here!",
+        "ERRORS": {
+            "FULLNAME_REQUIRED_ERROR":"The fullname is required!",
+            "USERNAME_REQUIRED_ERROR":"The username is required!",
+            "USERNAME_MIN_LENGTH_ERROR":"The username must contain at least fice characters!",
+            "EMAIL_REQUIRED_ERROR":"The e-mail address is required!",
+            "EMAIL_FORMAT_ERROR":"The e-mail address format is invalid!",
+            "PASSWORD_REQUIRED_ERROR":"The password is required!",
+            "PASSWORD_MIN_LENGTH_ERROR":"The password must contain at least fice characters!",
+            "PASSWORD_NUMBER_UPPERCASE_ERROR":"The password must contain at least one number and one upper case letter",
+            "CONFIRM_PASS_REQUIRED_ERROR":"Password confirmation is required!",
+            "PASSWORDS_NOT_SAME_ERROR":"The passwords do not match!",
+            "GDPR_ACCEPT_REQUIRED_ERROR":"You must accept the GDPR!"
+        }
+    },
+    "LOGIN":{
+        "LOGIN": "Login",
+        "USERNAME": "Username",
+        "PASSWORD":"Password",
+        "NO_ACCOUNT":"Do not have an account?",
+        "SIGN_UP": "Sign up!",
+        "ERRORS": {
+            "USERNAME_OR_PASSWORD_ERROR": "The username or the password is invalid!"
+        }
+    },
+    "ERRORS": {
+        
+    },
+    "REUSABLES": {
+
+    }
+}

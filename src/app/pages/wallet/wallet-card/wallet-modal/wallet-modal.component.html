@@ -1,0 +1,34 @@
+<div class="modal fade" [id]="category.name + '-' + category.id" tabindex="-1" aria-labelledby="modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content border-0">
+            <div class="modal-header text-center" [ngStyle]="{'background-color': category.color}">
+                <div class="d-flex">
+                    <i class="fs-4" [ngClass]="category.icon"></i>
+                    <h5 class="text-capitalize fw-bold ms-2">{{ category.name }}</h5>
+                </div>
+                
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form (ngSubmit)="onSubmit()" [formGroup]="formGroup">
+                <div class="modal-body">
+                    <div class="input-group mt-2">
+                        <input type="number" formControlName="amount" class="form-control shadow-none" id="amount" placeholder="Összeg">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Ft</span>
+                        </div>
+                    </div>
+                    <div class="form-group mt-2">
+                        <textarea formControlName="comment" id="comment" class="form-control shadow-none" placeholder="Megjegyzés"></textarea>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning w-100" data-bs-dismiss="modal">Vissza</button>
+                    <button type="submit" class="btn btn-success w-100" data-bs-dismiss="modal"> Mentés</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<app-alert #alert></app-alert>

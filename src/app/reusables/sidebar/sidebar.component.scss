@@ -1,0 +1,25 @@
+#sidebar {
+    background: rgb(49, 185, 122);
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.list-group-item {
+    background: none !important;
+    color: black;
+}
+
+.active-link {
+    background:#80d4ab !important;
+}
+
+.list-group-item:hover {
+    background:#80d4ab !important;
+}
+
+@media (max-width: 1080px){
+    #sidebar {
+        position: fixed !important;
+        z-index: 10;
+    }
+}
