@@ -3,5 +3,14 @@ export interface RecordsType{
     categoryId: number,
     amount: number,
     comment: String,
-    period: String
+    period: String,
+}
+
+export interface RecordsDashboardType{
+    id: number,
+    categoryId: number,
+    amount: number,
+    comment: String,
+    period: String,
+    name: String
 }

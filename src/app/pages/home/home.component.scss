@@ -1,0 +1,40 @@
+.carousel-item{
+    background: linear-gradient(to top, rgba(80, 206, 147, 0.302), rgb(255, 255, 255));
+    height: 300px;
+    border-radius: 10px;
+    border: 0;
+}
+
+p{
+  margin-top: 100px;
+  font-family: 'Limelight', cursive;
+  color: black;
+  font-size: large;
+}
+
+.carousel{
+    margin-top: 150px;
+    margin-left: 50px;
+}
+
+button{
+    background-color: rgb(127, 255, 212);
+    border-radius: 10px;
+    border: 0;
+    height: 50px;
+    width: 150px;
+    margin-top: 100px;
+}
+
+button:hover{
+    background-color: rgb(48, 203, 159);
+    border-radius: 10px;
+    border: 1;
+    border-color: black;
+    color: black;
+}
+
+
+.full{
+    background: linear-gradient(to top, rgba(81, 206, 148, 0.302), rgb(255, 255, 255));
+}

@@ -1,5 +1,5 @@
 import { formatDate } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,  } from '@angular/core';
 import { Router } from '@angular/router';
 import { CategoriesType } from 'src/app/commons/models/categories';
 import { RecordsType } from 'src/app/commons/models/records';
@@ -24,8 +24,9 @@ export class WalletComponent implements OnInit {
 
   title: string = "Kiadások";
 
-  expensesList: number[] = [1, 2, 3, 4, 5, 6, 9];
+  expensesList: number[] = [1, 2, 3, 4, 5, 6, 9, 10];
   incomesLst: number[] = [7, 8];
+
 
   constructor(private categoryService: CategoriesService, private recordsService: RecordsService, private router: Router) {
     if (this.router.url.includes('incomes')) {

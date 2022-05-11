@@ -1,6 +1,6 @@
 import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserType } from 'src/app/commons/models/user';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-sidebar',
@@ -12,10 +12,11 @@ export class SidebarComponent implements OnInit {
   width: number = 200;
   user!: any;
 
-  constructor(private router: Router, private elementRef: ElementRef) {
+  constructor(private router: Router, private elementRef: ElementRef, public translate: TranslateService) {
     this.user = JSON.parse(localStorage.getItem("user")!);
+    translate.addLangs(['hu','en']);
   }
-
+ 
   @HostListener('window:resize', ['$event'])
   onResize() {
 
@@ -46,6 +47,6 @@ export class SidebarComponent implements OnInit {
 
   logout() {
     localStorage.removeItem("user");
-    this.router.navigate(['login']);
+    this.router.navigate(['home']);
   }
 }

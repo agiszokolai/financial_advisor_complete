@@ -1,11 +1,5 @@
 {
     "REGISTRATION": {
-        "REGISTRATION":"Registration",
-        "FULLNAME": "Fullname",
-        "USERNAME": "Username",
-        "EMAIL_ADDRESS":"E-mail address",
-        "PASSWORD": "Password",
-        "CONFIRM_PASS": "Confirm password",
         "CONDITIONS": "Conditions",
         "CONDITIONS_LIST": "The password must contain at least one number, one upper case letter and five characters",
         "GDPR_ACCEPT":"GDPR acceptions",
@@ -26,9 +20,6 @@
         }
     },
     "LOGIN":{
-        "LOGIN": "Login",
-        "USERNAME": "Username",
-        "PASSWORD":"Password",
         "NO_ACCOUNT":"Do not have an account?",
         "SIGN_UP": "Sign up!",
         "ERRORS": {
@@ -39,6 +30,51 @@
         
     },
     "REUSABLES": {
-
-    }
+        "FULLNAME": "Fullname",
+        "USERNAME": "Username",
+        "EMAIL_ADDRESS":"E-mail address",
+        "PASSWORD": "Password",
+        "CONFIRM_PASS": "Confirm password",
+        "REGISTRATION":"Registration",
+        "LOGIN": "Login",
+        "EDIT": "Edit",
+        "CANCEL": "Cancel",
+        "SAVE": "Save",
+        "EXPENSES": "Expenses",
+        "INCOMES": "Incomes",
+        "PROFILE": "Profile",
+        "DASHBOARD": "Dashboard"
+    },
+    "c":{
+       
+    },
+    "DASHBOARD":{
+        "CATEGORY": "Category",
+        "AMOUNT": "Amount",
+        "COMMENT": "Comment",
+        "DATE": "Date",
+        "DELETE": "Delete"
+    },
+    "HOME":{
+        "PAGE_1": "Are you tired of having to keep your finances on paper?",
+        "PAGE_2": "It's time to change!",
+        "PAGE_3": " Register or log in now!"
+    },
+    "PROFILE":{
+        "NEW_PASS":"New password",
+        "OLD_PASS":"Old password"
+    },
+    "SIDEBAR":{
+        "WELCOME": "Welcome",
+        "LOG_OUT": "Log out",
+        "SELECT_LANGUAGE": "Select language"
+    },
+    "FOOD": "Food",
+    "TRANSPORT": "Transport",
+    "SHOPPING": "Shopping",
+    "SPORT": "Sport",
+    "HEALTH": "Health",
+    "GIFT": "Gift",
+    "OTHER": "Other",
+    "HOUSEHOLD": "Household"
 }

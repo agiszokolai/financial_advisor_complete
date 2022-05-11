@@ -2,6 +2,7 @@
     max-width: 500px;
     width: 100%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: linear-gradient(to top, rgba(81, 206, 148, 0.3), rgb(255, 255, 255));
 }
   
 .form-control {
@@ -11,3 +12,21 @@
 .form-group {
     position: relative;
 }
+
+.back{
+    background-color: aquamarine;
+    border-radius: 10px;
+    border: 0;
+    height: 50px;
+    width: 150px;
+    color: black;
+}
+
+.back:hover{
+    background-color: rgb(48, 203, 159);
+    border-radius: 10px;
+    border: 1;
+    border-color: black;
+    color: black;
+}
+

@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
         response => {
           console.log("Test")
           localStorage.setItem("user", JSON.stringify(response));
-          this.router.navigate(['../profile']);
+          this.router.navigate(['../dashboard']);
         },
         error => {
           this.loginForm.get('username')?.setErrors({incorrect: true})

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-app-layout',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppLayoutComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  
+  
+  constructor(public translate: TranslateService) { 
+    translate.addLangs(['hu','en']); 
+   }
+ 
+   ngOnInit(): void {
+  }
+  
+  setHu(){
+    this.translate.setDefaultLang("hu");
   }
 
+  setEn(){
+      this.translate.setDefaultLang("en");
+  }
 }
+

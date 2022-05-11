@@ -1,8 +1,8 @@
 export interface CategoriesType{
 id: number,
-name: String,
-name_e: String,
-type: String,
-color: String,
-icon: String
+name: string,
+name_e: string,
+type: string,
+color: string,
+icon: string
 }

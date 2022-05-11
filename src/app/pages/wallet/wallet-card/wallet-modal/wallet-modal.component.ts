@@ -2,8 +2,10 @@ import { formatDate } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CategoriesType } from 'src/app/commons/models/categories';
+import { CommentType } from 'src/app/commons/models/comment';
 import { RecordsType } from 'src/app/commons/models/records';
 import { AlertComponent } from 'src/app/reusables/alert/alert.component';
+import { CommentsService } from 'src/app/services/htpp-services/comments.service';
 import { RecordsService } from 'src/app/services/htpp-services/records.service';
 
 @Component({
@@ -33,7 +35,8 @@ export class WalletModalComponent implements OnInit {
 
   formGroup!: FormGroup;
   
-  constructor(private recordservice: RecordsService) { }
+  constructor(private recordservice: RecordsService, private commentService: CommentsService) { }
+
 
   initForm(): void {
     this.formGroup = new FormGroup({
@@ -50,18 +53,24 @@ export class WalletModalComponent implements OnInit {
 
   onSubmit(): void {
     this.record.id == 0 ? this.createRecord() : this.editRecord();
+    this.createComment();
   }
 
   createRecord() {
     this.recordservice.post(this.formGroup.getRawValue()).subscribe(
       response => {
-        this.alert.showSuccessAlert("A költség rögzítése sikeresen megtörtént!");
+        if(this.category.type=='költség'){
+          this.alert.showSuccessAlert("A költség rögzítése sikeresen megtörtént!");
+        }else this.alert.showSuccessAlert("A bevétel rögzítése sikeresen megtörtént!");
+          
         this.actionEmit.emit(true);
         this.initForm();
         this.record = response
       },
       error =>  {
-        this.alert.showDangerAlert("A költség rögzítése sikertelen volt!")
+        if(this.category.type=='költség'){
+          this.alert.showSuccessAlert("A költség rögzítése sikertelen volt!");
+        }else this.alert.showSuccessAlert("A bevétel rögzítése sikertelen volt!");
         this.initForm();
       }
     )
@@ -75,15 +84,40 @@ export class WalletModalComponent implements OnInit {
 
     this.recordservice.put(this.record.id, record).subscribe(
       response => {
-        this.alert.showSuccessAlert("A költség rögzítése sikeresen megtörtént!");
+        if(this.category.type=='költség'){
+          this.alert.showSuccessAlert("A költség rögzítése sikeresen megtörtént!");
+        }else this.alert.showSuccessAlert("A bevétel rögzítése sikeresen megtörtént!");
+        
         this.actionEmit.emit(true);
         this.initForm();
         this.record = response
         console.log(response)
       },
       error =>  {
-        this.alert.showDangerAlert("A költség rögzítése sikertelen volt!")
+        if(this.category.type=='költség'){
+          this.alert.showDangerAlert("A költség rögzítése sikertelen volt!");
+        }else this.alert.showDangerAlert("A bevétel rögzítése sikertelen volt!");
         this.initForm();
+      }
+    )
+  }
+
+  createComment() {
+
+    let comment: CommentType = {
+      categoryId: this.category.id,
+      amount: this.formGroup.get('amount')?.value,
+      comment: this.formGroup.get('comment')?.value ,
+      period: formatDate(this.currentDate, 'y-MM', 'en'),
+      userId: JSON.parse(localStorage.getItem("user")!)['id']
+    };
+
+    this.commentService.post(comment).subscribe(
+      response => {
+       // this.alert.showSuccessAlert("A record létrehozása sikeresen megtörtént!");
+      },
+      error => {
+       // this.alert.showDangerAlert("A record létrehozása sikertelen volt!")
       }
     )
   }

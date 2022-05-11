@@ -1,5 +1,5 @@
 #sidebar {
-    background: rgb(49, 185, 122);
+    background: #31b97a;
     overflow: hidden;
     transition: 0.3s;
 }
@@ -16,6 +16,7 @@
 .list-group-item:hover {
     background:#80d4ab !important;
 }
+
 
 @media (max-width: 1080px){
     #sidebar {

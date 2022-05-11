@@ -1,40 +1,47 @@
-<div class="card shadow-lg p-3 mb-5 rounded  position-absolute top-50 start-50 translate-middle">
-    <div class="card-header bg-transparent">
-        <h1 class="text-center"> {{ 'LOGIN.LOGIN' | translate }}</h1>
+<div>
+    <div class="ms-3">
+        <button class="btn btn-primary shadow-none back" [routerLink]="'../home'">
+            Vissza 
+        </button>
     </div>
-    <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
-        <div class="card-body">
-
-            <div class="form-group mt-3">
-                <span class="position-absolute top-0 mt-1 ms-2">
-                    <i id="icon-username" class="bi bi-person"></i>
-                </span>
-                <input type="text" formControlName="username" id="username" placeholder="{{ 'LOGIN.USERNAME' | translate }}"
-                    class="form-control border-0 border-bottom">
-            </div>
-
-            <div class="form-group mt-3">
-                <span class="position-absolute top-0 mt-1 ms-2 ">
-                    <i id="icon-password" class="bi bi-unlock"></i>
-                </span>
-                <input type="password" formControlName="password" id="password" placeholder="{{ 'LOGIN.PASSWORD' | translate }}"
-                    class="form-control border-0 border-bottom ms-2">
-            </div>
-
-            <div class="text-danger" *ngIf="loginForm.get('username')?.errors?.incorrect">
-                A felhasználónév vagy jelszó helytelen!
-            </div>
+    <div class="card shadow-lg p-3 mb-5 rounded  position-absolute top-50 start-50 translate-middle">
+        <div class="card-header bg-transparent">
+            <h1 class="text-center"> {{ 'REUSABLES.LOGIN' | translate }}</h1>
         </div>
-
-        <div class="card-footer">
-            <div class="text-center mt-3">
-                <button type="submit" [disabled]="!loginForm.valid" class="btn btn-primary">{{ 'LOGIN.LOGIN' | translate }}</button>
+        <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+            <div class="card-body">
+    
+                <div class="form-group mt-3">
+                    <span class="position-absolute top-0 mt-1 ms-2">
+                        <i id="icon-username" class="bi bi-person"></i>
+                    </span>
+                    <input type="text" formControlName="username" id="username" placeholder="{{ 'REUSABLES.USERNAME' | translate }}"
+                        class="form-control border-0 border-bottom shadow-none">
+                </div>
+    
+                <div class="form-group mt-3">
+                    <span class="position-absolute top-0 mt-1 ms-2 ">
+                        <i id="icon-password" class="bi bi-unlock"></i>
+                    </span>
+                    <input type="password" formControlName="password" id="password" placeholder="{{ 'REUSABLES.PASSWORD' | translate }}"
+                        class="form-control border-0 border-bottom shadow-none">
+                </div>
+    
+                <div class="text-danger" *ngIf="loginForm.get('username')?.errors?.incorrect">
+                    A felhasználónév vagy jelszó helytelen!
+                </div>
             </div>
-
-            <p class="text-center mt-2">
-                {{ 'LOGIN.NO_ACCOUNT' | translate }}
-                <a [routerLink]="'../registration'">{{ 'LOGIN.SIGN_UP' | translate }}</a>
-            </p>
-        </div>
-    </form>
+    
+            <div class="card-footer">
+                <div class="text-center mt-3">
+                    <button type="submit" [disabled]="!loginForm.valid" class="btn btn-primary">{{ 'REUSABLES.LOGIN' | translate }}</button>
+                </div>
+    
+                <p class="text-center mt-2">
+                    {{ 'LOGIN.NO_ACCOUNT' | translate }}
+                    <a [routerLink]="'../registration'">{{ 'LOGIN.SIGN_UP' | translate }}</a>
+                </p>
+            </div>
+        </form>
+    </div>
 </div>

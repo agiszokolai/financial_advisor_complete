@@ -1,7 +1,7 @@
 <div class="modal fade" [id]="category.name + '-' + category.id" tabindex="-1" aria-labelledby="modal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content border-0">
-            <div class="modal-header text-center" [ngStyle]="{'background-color': category.color}">
+            <div class="modal-header" [ngStyle]="{'background-color': category.color}">
                 <div class="d-flex">
                     <i class="fs-4" [ngClass]="category.icon"></i>
                     <h5 class="text-capitalize fw-bold ms-2">{{ category.name }}</h5>
@@ -23,8 +23,13 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-warning w-100" data-bs-dismiss="modal">Vissza</button>
-                    <button type="submit" class="btn btn-success w-100" data-bs-dismiss="modal"> Mentés</button>
+                    <button type="button" class="btn btn-warning w-100" data-bs-dismiss="modal" data-bs-toggle="tooltip"
+                     data-bs-placement="bottom" title="{{ 'REUSABLES.CANCEL' | translate }}">Vissza
+                    </button>
+                    <button type="submit" class="btn btn-success w-100" data-bs-dismiss="modal" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="{{ 'REUSABLES.SAVE' | translate }}"> Mentés
+
+                    </button>
                 </div>
             </form>
         </div>

@@ -1,1 +1,26 @@
-<p>statement works!</p>
+<div class="bg-grey">
+
+  <div class="py-3">
+    <input (input)="setPeriod($event)" [value]="currentDate | date: 'y-MM'" type="month" class="form-control m-auto"
+      id="period" [ngStyle]="{'width': '200px'}">
+  </div>
+
+  <div>
+    <app-wallet-chart></app-wallet-chart>
+  </div>
+
+  <div class="py-3">
+    <app-wallet-table
+      [comments]="getCommentsByType('kiadás')" 
+      [title]="'REUSABLES.EXPENSES' | translate"
+      (deleteAction)="getComments()">
+    </app-wallet-table>
+    <div class="mt-3"></div>
+    <app-wallet-table 
+      [comments]="getCommentsByType('bevétel')" 
+      [title]="'REUSABLES.INCOMES' | translate"
+      (deleteAction)="getComments()">
+    </app-wallet-table>
+  </div>
+</div>
+  <app-alert #alert></app-alert>

@@ -49,9 +49,12 @@ export class RegistrationComponent implements OnInit {
     });
   }
 
+  // TODO: JELSZÓ VALIDATORS SZÁM-NAGYBETŰ SZÉTSZEDÉSE
   samePasswordValidators(control: FormControl): { [s: string] : boolean } | null {
     return this.registerForm !== undefined && this.registerForm.get('password')!.value === control.value
       ? null
       : { notSamePassword: true }
   }
+
+
 }

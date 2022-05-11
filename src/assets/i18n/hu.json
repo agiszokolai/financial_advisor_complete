@@ -1,11 +1,5 @@
 {
     "REGISTRATION": {
-        "REGISTRATION":"Regisztráció",
-        "FULLNAME": "Teljes név",
-        "USERNAME": "Felhasználónév",
-        "EMAIL_ADDRESS":"E-mail cím",
-        "PASSWORD": "Jelszó",
-        "CONFIRM_PASS": "Jelszó megerősítése",
         "CONDITIONS": "Feltételek",
         "CONDITIONS_LIST":"A jelszónak legalább 1 nagy betűt, 1 számot és 5 karaktert tartalmaznia kell!",
         "GDPR_ACCEPT":"GDPR elfogadása",
@@ -18,17 +12,15 @@
             "EMAIL_REQUIRED_ERROR":"Az e-mail cím megadása kötelező!",
             "EMAIL_FORMAT_ERROR":"Az e-mail cím formátuma nem megfelő!",
             "PASSWORD_REQUIRED_ERROR":"A jelszó megadása kötelező!",
-            "PASSWORD_MIN_LENGTH_ERROR":"A jelszónak miminum 5 karakterből kell állnia!",
+            "PASSWORD_MIN_LENGTH_ERROR":"A jelszónak minimum 5 karakterből kell állnia!",
             "PASSWORD_NUMBER_UPPERCASE_ERROR":"A jelszónak tartalmaznia kell legalább egy számot és egy nagy betűt!",
-            "CONFIRM_PASS_REQUIRED_ERROR":"A jelsző megerősítése kötelező!",
+            "CONFIRM_PASS_REQUIRED_ERROR":"A jelszó megerősítése kötelező!",
             "PASSWORDS_NOT_SAME_ERROR":"A jelszavak nem egyeznek!",
             "GDPR_ACCEPT_REQUIRED_ERROR":"A GDPR elfogadása kötelező!"
         }
     },
     "LOGIN":{
-        "LOGIN": "Bejelentkezés",
-        "USERNAME": "Felhasználónév",
-        "PASSWORD": "Jelszó",
+      
         "NO_ACCOUNT":"Még nincs fiókod?",
         "SIGN_UP": "Regisztrálj itt!",
         "ERRORS": {
@@ -39,6 +31,52 @@
         
     },
     "REUSABLES": {
+        "REGISTRATION":"Regisztráció",
+        "FULLNAME": "Teljes név",
+        "USERNAME": "Felhasználó név",
+        "EMAIL_ADDRESS":"E-mail cím",
+        "PASSWORD": "Jelszó",
+        "CONFIRM_PASS": "Jelszó megerősítése",
+        "LOGIN": "Bejelentkezés",
+        "EDIT": "Szerkesztés",
+        "CANCEL": "Vissza",
+        "SAVE": "Mentés",
+        "EXPENSES": "Kiadás",
+        "INCOMES": "Bevétel",
+        "PROFILE": "Profil",
+        "DASHBOARD": "Kimutatás"
+    },
+    "c":{
+        
+    },
+    "DASHBOARD":{
+        "CATEGORY": "Kategória",
+        "AMOUNT": "Összeg",
+        "COMMENT": "Megjegyzés",
+        "DATE": "Dátum",
+        "DELETE": "Törlés"
 
-    }
+    },
+    "HOME":{
+        "PAGE_1": "Eleged van már abból, hogy papíron kell vezetned a pénzügyeidet? ",
+        "PAGE_2": "Ideje változtatni!",
+        "PAGE_3": "Regisztrálj vagy jelenkezz be most!"
+    },
+    "PROFILE":{
+        "NEW_PASS":"Új jelszó",
+        "OLD_PASS":"Régi jelszó"
+    },
+    "SIDEBAR":{
+        "WELCOME": "Üdv",
+        "LOG_OUT": "Kijelentkezés",
+        "SELECT_LANGUAGE": "Válassz nyelvet"
+    },
+    "FOOD": "Élelmiszer",
+    "TRANSPORT": "Közlekedés",
+    "SHOPPING": "Vásárlás",
+    "SPORT": "Sport",
+    "HEALTH": "Egészség",
+    "GIFT": "Ajándék",
+    "OTHER": "Egyéb",
+    "HOUSEHOLD": "Háztartás"
 }

@@ -5,7 +5,6 @@ import {HttpClient, HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/h
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
-import { IncomesComponent } from './pages/incomes/incomes.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
@@ -26,6 +25,10 @@ import { MyInterceptor } from './interceptor/MyInterceptor';
 import { WalletCardComponent } from './pages/wallet/wallet-card/wallet-card.component';
 import { WalletModalComponent } from './pages/wallet/wallet-card/wallet-modal/wallet-modal.component';
 import { WalletComponent } from './pages/wallet/wallet.component';
+import { NgChartsModule } from 'ng2-charts';
+import { RouterModule } from '@angular/router';
+import { WalletTableComponent } from './pages/dashboard/wallet-table/wallet-table.component';
+import { WalletChartComponent } from './pages/dashboard/wallet-chart/wallet-chart.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -36,7 +39,6 @@ export function HttpLoaderFactory(http: HttpClient) {
   declarations: [
     AppComponent,
     HomeComponent,
-    IncomesComponent,
     ProfileComponent,
     DashboardComponent,
     RegistrationComponent,
@@ -50,6 +52,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     WalletCardComponent,
     WalletModalComponent,
     WalletComponent,
+    WalletTableComponent,
+    WalletChartComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,11 +67,13 @@ export function HttpLoaderFactory(http: HttpClient) {
       defaultLanguage: 'hu',
       loader: {
         provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
+        useFactory: httpTranslateLoader,
         deps: [HttpClient]
     }
     }),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgChartsModule,
+    RouterModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: MyInterceptor, multi: true}
@@ -75,3 +81,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+export function httpTranslateLoader(http: HttpClient){
+  return new TranslateHttpLoader(http);
+}

@@ -1,144 +1,151 @@
-<div class="card shadow-lg p-3 mb-5 rounded position-absolute top-50 start-50 translate-middle">
-    <div class="card-header bg-transparent">
-        <h1 class="text-center">{{ 'REGISTRATION.REGISTRATION' | translate }}</h1>
+<div>
+    <div class="ms-3 backdiv" >
+        <button class="btn btn-primary shadow-none back" [routerLink]="'../home'">
+            Vissza 
+        </button>
     </div>
-    <form (ngSubmit)="onSubmit()" [formGroup]="registerForm">
-        <div class="card-body">
-
-            <div class="form-group mt-3">
-                <span class="position-absolute top-0 mt-1 ms-2">
-                    <i id="icon-fullname" class="bi bi-person"></i>
-                </span>
-                <input type="text" formControlName="fullname" id="fullname" placeholder="{{ 'REGISTRATION.FULLNAME' | translate }}"
-                    class="form-control border-0 border-bottom">
-            </div>
-
-            
-            <div *ngIf="registerForm.get('fullname')!.touched && registerForm.get('fullname')!.invalid" class="text-danger" style="font-size: x-small;">
-                <div *ngIf="registerForm.get('fullname')?.errors?.required">
-                    {{ 'REGISTRATION.ERRORS.FULLNAME_REQUIRED_ERROR' | translate }}
+    <div class="card shadow-lg p-3 mb-5 rounded position-absolute top-50 start-50 translate-middle">
+        <div class="card-header bg-transparent">
+            <h1 class="text-center">{{ 'REUSABLES.REGISTRATION' | translate }}</h1>
+        </div>
+        <form (ngSubmit)="onSubmit()" [formGroup]="registerForm">
+            <div class="card-body">
+    
+                <div class="form-group mt-3">
+                    <span class="position-absolute top-0 mt-1 ms-2">
+                        <i id="icon-fullname" class="bi bi-person"></i>
+                    </span>
+                    <input type="text" formControlName="fullname" id="fullname" placeholder="{{ 'REUSABLES.FULLNAME' | translate }}"
+                        class="form-control border-0 border-bottom">
                 </div>
-            </div>
-
-            <!-- Felhasználónév form-group -->
-            <div class="form-group mt-3">
-                <span class="position-absolute top-0 mt-1 ms-2">
-                    <i id="icon-username" class="bi bi-person"></i>
-                </span>
-                <input type="text" formControlName="username" id="username" placeholder="{{ 'REGISTRATION.USERNAME' | translate }}"
-                    class="form-control border-0 border-bottom">
-            </div>
-            <!-- /Felhasználónév form-group -->
-
-            <!-- Felhasználónév hibaüzenetek -->
-            <div *ngIf="registerForm.get('username')!.touched && registerForm.get('username')!.invalid" class="text-danger" style="font-size: x-small;">
-                <div *ngIf="registerForm.get('username')?.errors?.required" >
-                    {{ 'REGISTRATION.ERRORS.USERNAME_REQUIRED_ERROR' | translate }}
-                </div>
-                <div *ngIf="registerForm.get('username')?.errors?.minlength" >
-                    {{ 'REGISTRATION.ERRORS.USERNAME_MIN_LENGTH_ERROR' | translate }}
-                </div>
-                <div *ngIf="registerForm.get('username')?.errors?.exist" >
-                    A megadott felhasználónév már foglalt!
-                </div>
-            </div>
-            <!-- /Felhasználónév hibaüzenetek -->
-
-            <!-- E-mail cím form-group -->
-            <div class="form-group mt-3">
-                <span class="position-absolute top-0 mt-1 ms-2">
-                    <i id="icon-email" class="bi bi-envelope"></i>
-                </span>
-                <input type="email" formControlName="email" id="email" placeholder= "{{ 'REGISTRATION.EMAIL_ADDRESS' | translate }}"
-                    class="form-control border-0 border-bottom">
-            </div>
-            <!-- E-mail cím form-group -->
-
-            <!-- Email cím hibaüzenetek -->
-            <div *ngIf="registerForm.get('email')!.touched && registerForm.get('email')!.invalid" class="text-danger" style="font-size: x-small;">
-                <div *ngIf="registerForm.get('email')?.errors?.required" >
-                    {{ 'REGISTRATION.ERRORS.EMAIL_REQUIRED_ERROR' | translate }}
-                </div>
-                <div *ngIf="registerForm.get('email')?.errors?.email" >
-                    {{ 'REGISTRATION.ERRORS.EMAIL_FORMAT_ERROR' | translate }}
-                </div>
-                <div *ngIf="registerForm.get('email')?.errors?.exist" >
-                    {{ "A megadott e-mail cím már foglalt!" }}
-                </div>
-            </div>
-            <!-- /Email cím hibaüzenetek -->
-
-            <div class="form-group mt-3">
-                <span class="position-absolute top-0 mt-1 ms-2">
-                    <i id="icon-password" class="bi bi-unlock"></i>
-                </span>
-                <input type="password" formControlName="password" id="password" placeholder= "{{ 'REGISTRATION.PASSWORD' | translate }}"
-                    class="form-control border-0 border-bottom">
+    
                 
-                <div *ngIf="registerForm.get('password')!.touched && registerForm.get('password')!.invalid" class="text-danger" style="font-size: x-small;">
-                    <div *ngIf="registerForm.get('password')?.errors?.required" >
-                        {{ 'REGISTRATION.ERRORS.PASSWORD_REQUIRED_ERROR' | translate }}
-                    </div>
-                    <div *ngIf="registerForm.get('password')?.errors?.minlength" >
-                        {{ 'REGISTRATION.ERRORS.PASSWORD_MIN_LENGTH_ERROR' | translate }}
-                    </div>
-                    <div *ngIf="registerForm.get('password')?.errors?.pattern" >
-                        {{ 'REGISTRATION.ERRORS.PASSWORD_NUMBER_UPPERCASE_ERROR' | translate }}
-                    </div>
-                </div> 
-
-                <div class="text-end mt-2">
-                    <a role="button" class="text-decoration-none text-black" data-bs-toggle="collapse" data-bs-target="#conditions"> {{ 'REGISTRATION.CONDITIONS' | translate }} (?)</a>
-                    <div id="conditions" class="collapse small">
-                        <p class="text-muted mb-0 x-small" >{{ 'REGISTRATION.CONDITIONS_LIST' | translate }}</p>
+                <div *ngIf="registerForm.get('fullname')!.touched && registerForm.get('fullname')!.invalid" class="text-danger" style="font-size: x-small;">
+                    <div *ngIf="registerForm.get('fullname')?.errors?.required">
+                        {{ 'REGISTRATION.ERRORS.FULLNAME_REQUIRED_ERROR' | translate }}
                     </div>
                 </div>
-            </div>
-
-            <div class="form-group mt-3">
-                <span class="position-absolute top-0 mt-1 ms-2">
-                    <i id="icon-password2" class="bi bi-unlock"></i>
-                </span>
-                <input type="password" formControlName="confirm_pass" id="confirm_pass" placeholder= "{{ 'REGISTRATION.CONFIRM_PASS' | translate }}"
-                    class="form-control border-0 border-bottom">
-            </div>
-
-            <div class="text-danger x-small" *ngIf="registerForm.get('confirm_pass')!.touched && registerForm.get('confirm_pass')!.invalid" class="text-danger" style="font-size: x-small;">
-                <div *ngIf="registerForm.get('confirm_pass')?.errors?.required">
-                    {{ 'REGISTRATION.ERRORS.CONFIRM_PASS_REQUIRED_ERROR' | translate }}
+    
+                <!-- Felhasználónév form-group -->
+                <div class="form-group mt-3">
+                    <span class="position-absolute top-0 mt-1 ms-2">
+                        <i id="icon-username" class="bi bi-person"></i>
+                    </span>
+                    <input type="text" formControlName="username" id="username" placeholder="{{ 'REUSABLES.USERNAME' | translate }}"
+                        class="form-control border-0 border-bottom">
                 </div>
-
-                <div *ngIf="registerForm.get('confirm_pass')?.errors?.notSamePassword">
-                    {{ 'REGISTRATION.ERRORS.PASSWORDS_NOT_SAME_ERROR' | translate }}
-                </div>
-            </div>
-
-            <div class="form-group my-3">
-                <input type="checkbox" formControlName="gdpr" id="gdpr" class="form-check-input">
-                <span class="checkmark" for="gdpr" class="form-check-label">
-                    {{ 'REGISTRATION.GDPR_ACCEPT' | translate }}
-                    <strong class="text-danger">*</strong>
-                </span>
-
-                <div  *ngIf="registerForm.get('gdpr')!.touched && registerForm.get('gdpr')!.invalid" class="text-danger" style="font-size: x-small;">
-                    <div *ngIf="registerForm.get('gdpr')?.errors?.required">
-                        {{ 'REGISTRATION.ERRORS.GDPR_ACCEPT_REQUIRED_ERROR' | translate }}
+                <!-- /Felhasználónév form-group -->
+    
+                <!-- Felhasználónév hibaüzenetek -->
+                <div *ngIf="registerForm.get('username')!.touched && registerForm.get('username')!.invalid" class="text-danger" style="font-size: x-small;">
+                    <div *ngIf="registerForm.get('username')?.errors?.required" >
+                        {{ 'REGISTRATION.ERRORS.USERNAME_REQUIRED_ERROR' | translate }}
                     </div>
-                   
-                 </div>
+                    <div *ngIf="registerForm.get('username')?.errors?.minlength" >
+                        {{ 'REGISTRATION.ERRORS.USERNAME_MIN_LENGTH_ERROR' | translate }}
+                    </div>
+                    <div *ngIf="registerForm.get('username')?.errors?.exist" >
+                        A megadott felhasználónév már foglalt!
+                    </div>
+                </div>
+                <!-- /Felhasználónév hibaüzenetek -->
+    
+                <!-- E-mail cím form-group -->
+                <div class="form-group mt-3">
+                    <span class="position-absolute top-0 mt-1 ms-2">
+                        <i id="icon-email" class="bi bi-envelope"></i>
+                    </span>
+                    <input type="email" formControlName="email" id="email" placeholder= "{{ 'REUSABLES.EMAIL_ADDRESS' | translate }}"
+                        class="form-control border-0 border-bottom">
+                </div>
+                <!-- E-mail cím form-group -->
+    
+                <!-- Email cím hibaüzenetek -->
+                <div *ngIf="registerForm.get('email')!.touched && registerForm.get('email')!.invalid" class="text-danger" style="font-size: x-small;">
+                    <div *ngIf="registerForm.get('email')?.errors?.required" >
+                        {{ 'REGISTRATION.ERRORS.EMAIL_REQUIRED_ERROR' | translate }}
+                    </div>
+                    <div *ngIf="registerForm.get('email')?.errors?.email" >
+                        {{ 'REGISTRATION.ERRORS.EMAIL_FORMAT_ERROR' | translate }}
+                    </div>
+                    <div *ngIf="registerForm.get('email')?.errors?.exist" >
+                        {{ "A megadott e-mail cím már foglalt!" }}
+                    </div>
+                </div>
+                <!-- /Email cím hibaüzenetek -->
+    
+                <div class="form-group mt-3">
+                    <span class="position-absolute top-0 mt-1 ms-2">
+                        <i id="icon-password" class="bi bi-unlock"></i>
+                    </span>
+                    <input type="password" formControlName="password" id="password" placeholder= "{{ 'REUSABLES.PASSWORD' | translate }}"
+                        class="form-control border-0 border-bottom">
+                    
+                    <div *ngIf="registerForm.get('password')!.touched && registerForm.get('password')!.invalid" class="text-danger" style="font-size: x-small;">
+                        <div *ngIf="registerForm.get('password')?.errors?.required" >
+                            {{ 'REGISTRATION.ERRORS.PASSWORD_REQUIRED_ERROR' | translate }}
+                        </div>
+                        <div *ngIf="registerForm.get('password')?.errors?.minlength" >
+                            {{ 'REGISTRATION.ERRORS.PASSWORD_MIN_LENGTH_ERROR' | translate }}
+                        </div>
+                        <div *ngIf="registerForm.get('password')?.errors?.pattern" >
+                            {{ 'REGISTRATION.ERRORS.PASSWORD_NUMBER_UPPERCASE_ERROR' | translate }}
+                        </div>
+                    </div> 
+    
+                    <div class="text-end mt-2">
+                        <a role="button" class="text-decoration-none text-black" data-bs-toggle="collapse" data-bs-target="#conditions"> {{ 'REGISTRATION.CONDITIONS' | translate }} (?)</a>
+                        <div id="conditions" class="collapse small">
+                            <p class="text-muted mb-0 x-small" >{{ 'REGISTRATION.CONDITIONS_LIST' | translate }}</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="form-group mt-3">
+                    <span class="position-absolute top-0 mt-1 ms-2">
+                        <i id="icon-password2" class="bi bi-unlock"></i>
+                    </span>
+                    <input type="password" formControlName="confirm_pass" id="confirm_pass" placeholder= "{{ 'REUSABLES.CONFIRM_PASS' | translate }}"
+                        class="form-control border-0 border-bottom">
+                </div>
+    
+                <div class="text-danger x-small" *ngIf="registerForm.get('confirm_pass')!.touched && registerForm.get('confirm_pass')!.invalid" class="text-danger" style="font-size: x-small;">
+                    <div *ngIf="registerForm.get('confirm_pass')?.errors?.required">
+                        {{ 'REGISTRATION.ERRORS.CONFIRM_PASS_REQUIRED_ERROR' | translate }}
+                    </div>
+    
+                    <div *ngIf="registerForm.get('confirm_pass')?.errors?.notSamePassword">
+                        {{ 'REGISTRATION.ERRORS.PASSWORDS_NOT_SAME_ERROR' | translate }}
+                    </div>
+                </div>
+    
+                <div class="form-group my-3">
+                    <input type="checkbox" formControlName="gdpr" id="gdpr" class="form-check-input">
+                    <span class="checkmark" for="gdpr" class="form-check-label">
+                        {{ 'REGISTRATION.GDPR_ACCEPT' | translate }}
+                        <strong class="text-danger">*</strong>
+                    </span>
+    
+                    <div  *ngIf="registerForm.get('gdpr')!.touched && registerForm.get('gdpr')!.invalid" class="text-danger" style="font-size: x-small;">
+                        <div *ngIf="registerForm.get('gdpr')?.errors?.required">
+                            {{ 'REGISTRATION.ERRORS.GDPR_ACCEPT_REQUIRED_ERROR' | translate }}
+                        </div>
+                       
+                     </div>
+                </div>
+    
+    
             </div>
-
-
-        </div>
-
-        <div class="card-footer">
-            <div class="text-center">
-                <button type="submit" [disabled]="!registerForm.valid" class="btn btn-primary" id="submit-start">{{ 'REGISTRATION.REGISTRATION' | translate }}</button>
+    
+            <div class="card-footer">
+                <div class="text-center">
+                    <button type="submit" [disabled]="!registerForm.valid" class="btn btn-primary" id="submit-start">{{ 'REUSABLES.REGISTRATION' | translate }}</button>
+                </div>
+                <p class="text-center mt-2">
+                    {{ 'REGISTRATION.HAVE_ACCOUNT' | translate }}
+                    <a [routerLink]="'../login'">{{ 'REGISTRATION.LOGIN_HERE' | translate }}</a>
+                </p>
             </div>
-            <p class="text-center mt-2">
-                {{ 'REGISTRATION.HAVE_ACCOUNT' | translate }}
-                <a [routerLink]="'../login'">{{ 'REGISTRATION.LOGIN_HERE' | translate }}</a>
-            </p>
-        </div>
-    </form>
+        </form>
+    </div>
 </div>

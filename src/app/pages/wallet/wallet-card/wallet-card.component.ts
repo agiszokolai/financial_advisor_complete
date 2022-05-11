@@ -19,6 +19,9 @@ export class WalletCardComponent implements OnInit {
   @Input()
   amountSum!: number;
 
+  @Input()
+  title!: string;
+
   currentDate!: Date;
 
   @Input()

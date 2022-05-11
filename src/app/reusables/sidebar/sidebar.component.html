@@ -1,31 +1,30 @@
 <div id="sidebar" class="position-sticky top-0 vh-100" [style.width.px]="width">
     <div class="sidebar-header text-center p-2">
-        <p class="fw-bold mt-2">Üdv {{ user.username }} </p>
+        <p class="fw-bold mt-2">{{ 'SIDEBAR.WELCOME' | translate }} {{ user.username }} </p>
     </div>
 
     <div class="sidebar-body mt-5">
         <ul class="list-group">
             <li class="list-group-item border-0" [routerLinkActive]="['active-link']">
-                <a class="btn shadow-none" [routerLinkActive]="['fw-bold']" [routerLink]="'profile'">Profil</a> 
+                <a class="btn shadow-none" [routerLinkActive]="['fw-bold']" [routerLink]="'dashboard'">{{ 'REUSABLES.DASHBOARD' | translate }}</a> 
             </li>
-    
+            
             <li class="list-group-item border-0" [routerLinkActive]="['active-link']">
-                <a class="btn shadow-none" [routerLinkActive]="['fw-bold']" [routerLink]="'wallet/expenses'">Kiadások</a> 
+                <a class="btn shadow-none" [routerLinkActive]="['fw-bold']" [routerLink]="'wallet/expenses'">{{ 'REUSABLES.EXPENSES' | translate }}</a> 
             </li>
-
-
-            <li class="list-group-item border-0" [routerLinkActive]="['active-link']">
-                <a class="btn shadow-none" [routerLinkActive]="['fw-bold']" [routerLink]="'wallet/incomes'">Bevételek</a> 
-            </li>
-
 
             <li class="list-group-item border-0" [routerLinkActive]="['active-link']">
-                <a class="btn shadow-none" [routerLinkActive]="['fw-bold']" [routerLink]="'statement'">Kimutatások</a> 
+                <a class="btn shadow-none" [routerLinkActive]="['fw-bold']" [routerLink]="'wallet/incomes'">{{ 'REUSABLES.INCOMES' | translate }}</a> 
             </li>
+
+            <li class="list-group-item border-0" [routerLinkActive]="['active-link']">
+                <a class="btn shadow-none" [routerLinkActive]="['fw-bold']" [routerLink]="'profile'">{{ 'REUSABLES.PROFILE' | translate }}</a> 
+            </li>
+           
         </ul>
     </div>
 
     <div class="position-absolute bottom-0 w-100">
-        <a class="btn shadow-none list-group-item border-0" (click)="logout()">Kijelentkezés</a>
+        <a class="btn shadow-none list-group-item border-0" (click)="logout()">{{ 'SIDEBAR.LOG_OUT' | translate }}</a>
     </div>
 </div>
