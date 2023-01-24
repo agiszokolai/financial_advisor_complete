@@ -14,8 +14,8 @@
             <tbody>
                 <tr *ngFor="let comment of comments ; let a = index">
 
-                    <td>{{a+1}}</td>
-                    <td></td>
+                    <td>{{ a+1 }}</td>
+                    <td>{{ getCategoryName(comment.categoryId) }}</td>
                     <td>{{ comment.amount }}</td>
                     <td>{{ comment.comment }}</td>
                     <td>{{ comment.period }}</td>

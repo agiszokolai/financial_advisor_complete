@@ -126,7 +126,7 @@
                         <strong class="text-danger">*</strong>
                     </span>
     
-                    <div  *ngIf="registerForm.get('gdpr')!.touched && registerForm.get('gdpr')!.invalid" class="text-danger" style="font-size: x-small;">
+                    <div  *ngIf="registerForm.get('gdpr')!.touched && registerForm.get('gdpr')!.invalid" class="text-danger x-small" style="font-size: x-small;">
                         <div *ngIf="registerForm.get('gdpr')?.errors?.required">
                             {{ 'REGISTRATION.ERRORS.GDPR_ACCEPT_REQUIRED_ERROR' | translate }}
                         </div>

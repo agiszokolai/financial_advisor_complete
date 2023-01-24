@@ -4,14 +4,37 @@
     <input (input)="setPeriod($event)" [value]="currentDate | date: 'y-MM'" type="month" class="form-control m-auto"
       id="period" [ngStyle]="{'width': '200px'}">
   </div>
-
-  <div>
-    <app-wallet-chart></app-wallet-chart>
-  </div>
+  
+  <div class="row g-0">
+    <div class="col-12 col-lg-6 my-3">
+        <div class="card mx-2 p-3">
+          <canvas class="bar-char" 
+          baseChart [datasets]="barChartData" 
+          [labels]="barChartLabels" 
+          [options]="barChartOptions"
+          [plugins]="barChartPlugins" 
+          [legend]="barChartLegend" [type]="'bar'">
+          </canvas>
+        </div>
+      </div>
+    
+      <div class="col-12 col-lg-6 my-3">
+        <div class="card mx-2 p-3" >
+          <canvas class="base-chart" 
+          baseChart [datasets]="pieChartData" 
+          [labels]="pieChartLabels" 
+          [type]="'pie'" 
+          [options]="pieChartOptions"
+          [plugins]="pieChartPlugins" 
+          [legend]="pieChartLegend">
+          </canvas>
+        </div>
+      </div>
+</div>
 
   <div class="py-3">
     <app-wallet-table
-      [comments]="getCommentsByType('kiadás')" 
+      [comments]="getCommentsByType('kiadás')"
       [title]="'REUSABLES.EXPENSES' | translate"
       (deleteAction)="getComments()">
     </app-wallet-table>

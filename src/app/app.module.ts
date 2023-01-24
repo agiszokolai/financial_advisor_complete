@@ -28,7 +28,6 @@ import { WalletComponent } from './pages/wallet/wallet.component';
 import { NgChartsModule } from 'ng2-charts';
 import { RouterModule } from '@angular/router';
 import { WalletTableComponent } from './pages/dashboard/wallet-table/wallet-table.component';
-import { WalletChartComponent } from './pages/dashboard/wallet-chart/wallet-chart.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -53,7 +52,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     WalletModalComponent,
     WalletComponent,
     WalletTableComponent,
-    WalletChartComponent,
   ],
   imports: [
     BrowserModule,

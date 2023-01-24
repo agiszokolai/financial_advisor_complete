@@ -47,7 +47,7 @@ export class CardPasswordComponent implements OnInit {
 
       user.password = sha512(user.password);
       user.new_password = sha512(user.new_password);
-      user.confirm_pass = sha512(user.confirm_pass)
+      user.confirm_pass = sha512(user.confirm_pass);
       
       this.userService.put(this.user.id, user).subscribe(
         response => {
